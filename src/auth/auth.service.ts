@@ -14,6 +14,7 @@ import { LoginDto } from './dto/login.dto.js';
 import { RegisterDto } from './dto/register.dto.js';
 import { RevokedToken } from './entities/revoked-token.entity.js';
 import { AuthenticatedUser } from './interfaces/jwt-payload.interface.js';
+import { TwoFactorService } from './two-factor.service.js';
 
 const BCRYPT_ROUNDS = 10;
 
@@ -22,6 +23,7 @@ export class AuthService {
   constructor(
     private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
+    private readonly twoFactorService: TwoFactorService,
     @InjectRepository(RevokedToken)
     private readonly revokedTokensRepository: Repository<RevokedToken>,
   ) {}
@@ -44,6 +46,18 @@ export class AuthService {
     const valid = user && (await bcrypt.compare(dto.password, user.password));
     if (!user || !valid) {
       throw new UnauthorizedException('Credenciales inválidas');
+    }
+
+    if (user.twoFAEnabled) {
+      if (!dto.totpCode) {
+        throw new UnauthorizedException('Se requiere el código 2FA');
+      }
+      const codeOk =
+        !!user.twoFASecret &&
+        (await this.twoFactorService.isCodeValid(user.twoFASecret, dto.totpCode));
+      if (!codeOk) {
+        throw new UnauthorizedException('Código 2FA inválido');
+      }
     }
 
     const payload = { sub: user.id, email: user.email, role: user.role };

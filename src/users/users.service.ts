@@ -13,9 +13,26 @@ export class UsersService {
   findByEmailWithPassword(email: string): Promise<User | null> {
     return this.usersRepository
       .createQueryBuilder('user')
-      .addSelect('user.password')
+      .addSelect(['user.password', 'user.twoFASecret'])
       .where('user.email = :email', { email })
       .getOne();
+  }
+
+  // Incluye twoFASecret (que por defecto no se selecciona)
+  findByIdWithTwoFASecret(id: string): Promise<User | null> {
+    return this.usersRepository
+      .createQueryBuilder('user')
+      .addSelect('user.twoFASecret')
+      .where('user.id = :id', { id })
+      .getOne();
+  }
+
+  async saveTwoFASecret(id: string, secret: string): Promise<void> {
+    await this.usersRepository.update(id, { twoFASecret: secret });
+  }
+
+  async activateTwoFA(id: string): Promise<void> {
+    await this.usersRepository.update(id, { twoFAEnabled: true });
   }
 
   findByEmail(email: string): Promise<User | null> {
