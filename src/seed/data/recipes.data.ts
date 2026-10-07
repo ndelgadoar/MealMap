@@ -16,12 +16,12 @@ const u = (ingredient: string, quantity: number) => ({ ingredient, quantity, uni
 
 export const RECIPES: RecipeSeed[] = [
   {
-    name: 'Avena con plátano y mantequilla de maní',
-    description: 'Avena cocida en leche con plátano en rodajas y una cucharada de mantequilla de maní.',
+    name: 'Avena con banano y mantequilla de maní',
+    description: 'Avena cocida en leche con banano en rodajas y una cucharada de mantequilla de maní.',
     category: 'Desayuno',
     prepTimeMinutes: 8,
     servingSize: 1,
-    ingredients: [g('Avena', 60), ml('Leche', 250), g('Plátano', 120), g('Mantequilla de maní', 15)],
+    ingredients: [g('Avena', 60), ml('Leche', 250), g('Banano', 120), g('Mantequilla de maní', 15)],
   },
   {
     name: 'Huevos revueltos con espinaca y pan integral',
@@ -40,12 +40,12 @@ export const RECIPES: RecipeSeed[] = [
     ingredients: [g('Yogur griego natural', 200), g('Avena', 30), g('Almendras', 15)],
   },
   {
-    name: 'Tostada con mantequilla de maní y plátano',
-    description: 'Pan integral tostado con mantequilla de maní y plátano en rodajas.',
+    name: 'Tostada con mantequilla de maní y banano',
+    description: 'Pan integral tostado con mantequilla de maní y banano en rodajas.',
     category: 'Snack',
     prepTimeMinutes: 5,
     servingSize: 1,
-    ingredients: [g('Pan integral', 40), g('Mantequilla de maní', 20), g('Plátano', 80)],
+    ingredients: [g('Pan integral', 40), g('Mantequilla de maní', 20), g('Banano', 80)],
   },
   {
     name: 'Pollo con arroz y brócoli',

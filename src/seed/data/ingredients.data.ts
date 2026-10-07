@@ -33,7 +33,7 @@ export const INGREDIENTS: IngredientSeed[] = [
   { name: 'Espinaca', caloriesPer100g: 23, proteinPer100g: 2.9, carbsPer100g: 3.6, fatPer100g: 0.4 },
   { name: 'Pimiento', caloriesPer100g: 31, proteinPer100g: 1, carbsPer100g: 6, fatPer100g: 0.3 },
   { name: 'Aguacate', caloriesPer100g: 160, proteinPer100g: 2, carbsPer100g: 8.5, fatPer100g: 14.7 },
-  { name: 'Plátano', caloriesPer100g: 89, proteinPer100g: 1.1, carbsPer100g: 22.8, fatPer100g: 0.3 },
+  { name: 'Banano', caloriesPer100g: 89, proteinPer100g: 1.1, carbsPer100g: 22.8, fatPer100g: 0.3 },
   { name: 'Leche', caloriesPer100g: 42, proteinPer100g: 3.4, carbsPer100g: 5, fatPer100g: 1 },
   { name: 'Yogur griego natural', caloriesPer100g: 59, proteinPer100g: 10, carbsPer100g: 3.6, fatPer100g: 0.4 },
   { name: 'Queso fresco', caloriesPer100g: 270, proteinPer100g: 18, carbsPer100g: 3, fatPer100g: 20 },
