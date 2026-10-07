@@ -6,6 +6,7 @@ import { AppService } from './app.service.js';
 import { UsersModule } from './users/users.module.js';
 import { CategoriesModule } from './categories/categories.module.js';
 import { IngredientsModule } from './ingredients/ingredients.module.js';
+import { RecipesModule } from './recipes/recipes.module.js';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { IngredientsModule } from './ingredients/ingredients.module.js';
     UsersModule,
     CategoriesModule,
     IngredientsModule,
+    RecipesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
