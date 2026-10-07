@@ -10,6 +10,7 @@ import { IngredientsModule } from './ingredients/ingredients.module.js';
 import { RecipesModule } from './recipes/recipes.module.js';
 import { FridgeModule } from './fridge/fridge.module.js';
 import { MealPlanModule } from './meal-plan/meal-plan.module.js';
+import { SeedModule } from './seed/seed.module.js';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { MealPlanModule } from './meal-plan/meal-plan.module.js';
     RecipesModule,
     FridgeModule,
     MealPlanModule,
+    SeedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
