@@ -7,6 +7,8 @@ import { UsersModule } from './users/users.module.js';
 import { CategoriesModule } from './categories/categories.module.js';
 import { IngredientsModule } from './ingredients/ingredients.module.js';
 import { RecipesModule } from './recipes/recipes.module.js';
+import { FridgeModule } from './fridge/fridge.module.js';
+import { MealPlanModule } from './meal-plan/meal-plan.module.js';
 
 @Module({
   imports: [
@@ -29,6 +31,8 @@ import { RecipesModule } from './recipes/recipes.module.js';
     CategoriesModule,
     IngredientsModule,
     RecipesModule,
+    FridgeModule,
+    MealPlanModule,
   ],
   controllers: [AppController],
   providers: [AppService],
