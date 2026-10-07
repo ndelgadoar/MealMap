@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { UsersModule } from './users/users.module.js';
+import { AuthModule } from './auth/auth.module.js';
 import { CategoriesModule } from './categories/categories.module.js';
 import { IngredientsModule } from './ingredients/ingredients.module.js';
 import { RecipesModule } from './recipes/recipes.module.js';
@@ -28,6 +29,7 @@ import { MealPlanModule } from './meal-plan/meal-plan.module.js';
       }),
     }),
     UsersModule,
+    AuthModule,
     CategoriesModule,
     IngredientsModule,
     RecipesModule,
