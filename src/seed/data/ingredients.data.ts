@@ -40,4 +40,61 @@ export const INGREDIENTS: IngredientSeed[] = [
   { name: 'Aceite de oliva', caloriesPer100g: 884, proteinPer100g: 0, carbsPer100g: 0, fatPer100g: 100 },
   { name: 'Almendras', caloriesPer100g: 579, proteinPer100g: 21, carbsPer100g: 22, fatPer100g: 50 },
   { name: 'Mantequilla de maní', caloriesPer100g: 588, proteinPer100g: 25, carbsPer100g: 20, fatPer100g: 50 },
+
+  // Proteínas
+  { name: 'Muslo de pollo (sin piel)', caloriesPer100g: 121, proteinPer100g: 19.7, carbsPer100g: 0, fatPer100g: 4.1 },
+  { name: 'Sobrebarriga de res', caloriesPer100g: 155, proteinPer100g: 21, carbsPer100g: 0, fatPer100g: 7.4 },
+  { name: 'Lomo de cerdo', caloriesPer100g: 143, proteinPer100g: 21, carbsPer100g: 0, fatPer100g: 5.7 },
+  { name: 'Tilapia', caloriesPer100g: 96, proteinPer100g: 20, carbsPer100g: 0, fatPer100g: 1.7 },
+  { name: 'Camarón', caloriesPer100g: 85, proteinPer100g: 20, carbsPer100g: 0.2, fatPer100g: 0.5 },
+  { name: 'Queso mozzarella', caloriesPer100g: 254, proteinPer100g: 24, carbsPer100g: 2.8, fatPer100g: 16 },
+  { name: 'Yogur natural', caloriesPer100g: 61, proteinPer100g: 3.5, carbsPer100g: 4.7, fatPer100g: 3.3 },
+  { name: 'Frijol rojo', caloriesPer100g: 333, proteinPer100g: 23.6, carbsPer100g: 60, fatPer100g: 0.8 },
+  { name: 'Arveja verde', caloriesPer100g: 81, proteinPer100g: 5.4, carbsPer100g: 14, fatPer100g: 0.4 },
+
+  // Carbohidratos y granos
+  { name: 'Arroz integral', caloriesPer100g: 370, proteinPer100g: 7.9, carbsPer100g: 77, fatPer100g: 2.9 },
+  { name: 'Quinua', caloriesPer100g: 368, proteinPer100g: 14.1, carbsPer100g: 64.2, fatPer100g: 6.1 },
+  { name: 'Harina de maíz precocida', caloriesPer100g: 350, proteinPer100g: 7, carbsPer100g: 77, fatPer100g: 1.5 },
+  { name: 'Arepa de maíz', caloriesPer100g: 210, proteinPer100g: 4.5, carbsPer100g: 44, fatPer100g: 1.5, gramsPerUnit: 80 },
+  { name: 'Tortilla de trigo', caloriesPer100g: 310, proteinPer100g: 8.3, carbsPer100g: 52, fatPer100g: 7.5, gramsPerUnit: 45 },
+  { name: 'Yuca', caloriesPer100g: 160, proteinPer100g: 1.4, carbsPer100g: 38, fatPer100g: 0.3 },
+  { name: 'Arracacha', caloriesPer100g: 100, proteinPer100g: 0.9, carbsPer100g: 24, fatPer100g: 0.2 },
+  { name: 'Papa criolla', caloriesPer100g: 75, proteinPer100g: 2, carbsPer100g: 17, fatPer100g: 0.3 },
+  { name: 'Plátano maduro', caloriesPer100g: 122, proteinPer100g: 1.3, carbsPer100g: 32, fatPer100g: 0.4 },
+  { name: 'Plátano verde', caloriesPer100g: 122, proteinPer100g: 1.3, carbsPer100g: 32, fatPer100g: 0.4 },
+  { name: 'Maíz dulce', caloriesPer100g: 86, proteinPer100g: 3.3, carbsPer100g: 19, fatPer100g: 1.4 },
+  { name: 'Granola', caloriesPer100g: 450, proteinPer100g: 10, carbsPer100g: 64, fatPer100g: 18 },
+
+  // Verduras y hierbas
+  { name: 'Ahuyama', caloriesPer100g: 26, proteinPer100g: 1, carbsPer100g: 6.5, fatPer100g: 0.1 },
+  { name: 'Habichuela', caloriesPer100g: 31, proteinPer100g: 1.8, carbsPer100g: 7, fatPer100g: 0.2 },
+  { name: 'Champiñones', caloriesPer100g: 22, proteinPer100g: 3.1, carbsPer100g: 3.3, fatPer100g: 0.3 },
+  { name: 'Lechuga', caloriesPer100g: 15, proteinPer100g: 1.4, carbsPer100g: 2.9, fatPer100g: 0.2 },
+  { name: 'Pepino', caloriesPer100g: 15, proteinPer100g: 0.7, carbsPer100g: 3.6, fatPer100g: 0.1 },
+  { name: 'Calabacín', caloriesPer100g: 17, proteinPer100g: 1.2, carbsPer100g: 3.1, fatPer100g: 0.3 },
+  { name: 'Coliflor', caloriesPer100g: 25, proteinPer100g: 1.9, carbsPer100g: 5, fatPer100g: 0.3 },
+  { name: 'Remolacha', caloriesPer100g: 43, proteinPer100g: 1.6, carbsPer100g: 9.6, fatPer100g: 0.2 },
+  { name: 'Repollo', caloriesPer100g: 25, proteinPer100g: 1.3, carbsPer100g: 5.8, fatPer100g: 0.1 },
+  { name: 'Cebolla larga', caloriesPer100g: 32, proteinPer100g: 1.8, carbsPer100g: 7.3, fatPer100g: 0.2 },
+  { name: 'Cilantro', caloriesPer100g: 23, proteinPer100g: 2.1, carbsPer100g: 3.7, fatPer100g: 0.5 },
+  { name: 'Limón', caloriesPer100g: 29, proteinPer100g: 1.1, carbsPer100g: 9.3, fatPer100g: 0.3, gramsPerUnit: 50 },
+
+  // Frutas
+  { name: 'Mango', caloriesPer100g: 60, proteinPer100g: 0.8, carbsPer100g: 15, fatPer100g: 0.4 },
+  { name: 'Papaya', caloriesPer100g: 43, proteinPer100g: 0.5, carbsPer100g: 11, fatPer100g: 0.3 },
+  { name: 'Piña', caloriesPer100g: 50, proteinPer100g: 0.5, carbsPer100g: 13, fatPer100g: 0.1 },
+  { name: 'Fresa', caloriesPer100g: 32, proteinPer100g: 0.7, carbsPer100g: 7.7, fatPer100g: 0.3 },
+  { name: 'Mora', caloriesPer100g: 43, proteinPer100g: 1.4, carbsPer100g: 10, fatPer100g: 0.5 },
+  { name: 'Manzana', caloriesPer100g: 52, proteinPer100g: 0.3, carbsPer100g: 14, fatPer100g: 0.2 },
+
+  // Grasas, frutos secos y otros
+  { name: 'Aceite vegetal', caloriesPer100g: 884, proteinPer100g: 0, carbsPer100g: 0, fatPer100g: 100 },
+  { name: 'Mantequilla', caloriesPer100g: 717, proteinPer100g: 0.9, carbsPer100g: 0.1, fatPer100g: 81 },
+  { name: 'Maní', caloriesPer100g: 567, proteinPer100g: 26, carbsPer100g: 16, fatPer100g: 49 },
+  { name: 'Nueces', caloriesPer100g: 654, proteinPer100g: 15, carbsPer100g: 14, fatPer100g: 65 },
+  { name: 'Chía', caloriesPer100g: 486, proteinPer100g: 16.5, carbsPer100g: 42, fatPer100g: 31 },
+  { name: 'Panela', caloriesPer100g: 380, proteinPer100g: 0.4, carbsPer100g: 96, fatPer100g: 0 },
+  { name: 'Miel', caloriesPer100g: 304, proteinPer100g: 0.3, carbsPer100g: 82, fatPer100g: 0 },
+  { name: 'Salsa de soya', caloriesPer100g: 53, proteinPer100g: 8, carbsPer100g: 4.9, fatPer100g: 0.6 },
 ];
