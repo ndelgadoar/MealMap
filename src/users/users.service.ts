@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { UpdateMacrosDto } from './dto/update-macros.dto.js';
 import { User } from './entities/user.entity.js';
 
 @Injectable()
@@ -33,6 +34,24 @@ export class UsersService {
 
   async activateTwoFA(id: string): Promise<void> {
     await this.usersRepository.update(id, { twoFAEnabled: true });
+  }
+
+  // Actualiza solo las metas enviadas y devuelve las cuatro metas resultantes
+  async updateMacros(id: string, dto: UpdateMacrosDto) {
+    // El DTO puede traer las propiedades como undefined; solo se actualizan las enviadas
+    const changes = Object.fromEntries(
+      Object.entries(dto).filter(([, value]) => value !== undefined),
+    );
+    if (Object.keys(changes).length > 0) {
+      await this.usersRepository.update(id, changes);
+    }
+    const user = await this.usersRepository.findOneByOrFail({ id });
+    return {
+      dailyCalories: user.dailyCalories,
+      dailyProtein: user.dailyProtein,
+      dailyCarbs: user.dailyCarbs,
+      dailyFat: user.dailyFat,
+    };
   }
 
   findByEmail(email: string): Promise<User | null> {
