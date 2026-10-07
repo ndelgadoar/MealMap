@@ -8,6 +8,7 @@ import { AuthController } from './auth.controller.js';
 import { AuthService } from './auth.service.js';
 import { RevokedToken } from './entities/revoked-token.entity.js';
 import { JwtAuthGuard } from './guards/jwt-auth.guard.js';
+import { RolesGuard } from './guards/roles.guard.js';
 import { JwtStrategy } from './strategies/jwt.strategy.js';
 import { TwoFactorService } from './two-factor.service.js';
 
@@ -27,7 +28,13 @@ import { TwoFactorService } from './two-factor.service.js';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, TwoFactorService, JwtStrategy, JwtAuthGuard],
-  exports: [AuthService, JwtAuthGuard],
+  providers: [
+    AuthService,
+    TwoFactorService,
+    JwtStrategy,
+    JwtAuthGuard,
+    RolesGuard,
+  ],
+  exports: [AuthService, JwtAuthGuard, RolesGuard],
 })
 export class AuthModule {}
