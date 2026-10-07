@@ -25,6 +25,15 @@ export class MealPlanController {
     return this.mealPlanService.generate(user.id);
   }
 
+  @Get('shopping-list')
+  @ApiOperation({
+    summary:
+      'Lista de compras de la semana con cantidades exactas por ingrediente (redondeadas hacia arriba)',
+  })
+  getShoppingList(@CurrentUser() user: AuthenticatedUser) {
+    return this.mealPlanService.getShoppingList(user.id);
+  }
+
   @Get()
   @ApiOperation({
     summary: 'Ver el plan de la semana actual, con los totales de macros de cada día',
