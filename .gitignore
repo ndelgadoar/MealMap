@@ -1,0 +1,22 @@
+# dependencias y build
+node_modules/
+dist/
+
+# variables de entorno (se sube solo .env.example)
+.env
+
+# cobertura de pruebas
+coverage/
+
+# logs
+*.log
+npm-debug.log*
+
+# sistema operativo / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# TypeScript incremental
+*.tsbuildinfo
