@@ -6,6 +6,7 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service.js';
 import { CurrentUser } from './decorators/current-user.decorator.js';
 import { LoginDto } from './dto/login.dto.js';
@@ -15,6 +16,7 @@ import { TwoFactorService } from './two-factor.service.js';
 import { JwtAuthGuard } from './guards/jwt-auth.guard.js';
 import type { AuthenticatedUser } from './interfaces/jwt-payload.interface.js';
 
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
   constructor(
@@ -35,12 +37,14 @@ export class AuthController {
 
   @Post('2fa/enable')
   @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   enable2fa(@CurrentUser() user: AuthenticatedUser) {
     return this.twoFactorService.enable(user.id);
   }
 
   @Post('2fa/verify')
   @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @HttpCode(HttpStatus.OK)
   async verify2fa(
     @CurrentUser() user: AuthenticatedUser,
@@ -52,6 +56,7 @@ export class AuthController {
 
   @Post('logout')
   @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @HttpCode(HttpStatus.NO_CONTENT)
   logout(@CurrentUser() user: AuthenticatedUser) {
     return this.authService.logout(user);
