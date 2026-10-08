@@ -8,6 +8,10 @@ import { In, Repository } from 'typeorm';
 import { RecipeIngredient } from '../recipes/entities/recipe-ingredient.entity.js';
 import { Recipe } from '../recipes/entities/recipe.entity.js';
 import { UsersService } from '../users/users.service.js';
+import {
+  ShoppingListResponse,
+  WeeklyPlanResponse,
+} from './dto/meal-plan-response.dto.js';
 import { MealPlanEntry } from './entities/meal-plan-entry.entity.js';
 import { MealPlan } from './entities/meal-plan.entity.js';
 import { MealType } from './enums/meal-type.enum.js';
@@ -32,7 +36,7 @@ export class MealPlanService {
   ) {}
 
   // Genera el plan de la semana actual. Si ya había uno, lo reemplaza.
-  async generate(userId: string) {
+  async generate(userId: string): Promise<WeeklyPlanResponse> {
     const goals = await this.getGoals(userId);
 
     const recipes = await this.recipes.find({ relations: { category: true } });
@@ -74,7 +78,7 @@ export class MealPlanService {
 
   // Lista de compras de la semana: lo que aporta cada comida del plan (1 porción de cada receta),
   // sumado por ingrediente
-  async getShoppingList(userId: string) {
+  async getShoppingList(userId: string): Promise<ShoppingListResponse> {
     const plan = await this.findCurrentPlan(userId);
 
     const entries = await this.entries.find({
@@ -106,7 +110,7 @@ export class MealPlanService {
   }
 
   // Plan de la semana actual, agrupado por día y con los totales de macros de cada día
-  async getCurrentPlan(userId: string) {
+  async getCurrentPlan(userId: string): Promise<WeeklyPlanResponse> {
     const plan = await this.findCurrentPlan(userId);
 
     const entries = await this.entries.find({

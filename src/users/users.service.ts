@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { MacrosResponseDto } from './dto/macros-response.dto.js';
 import { UpdateMacrosDto } from './dto/update-macros.dto.js';
 import { User } from './entities/user.entity.js';
 
@@ -37,7 +38,7 @@ export class UsersService {
   }
 
   // Actualiza solo las metas enviadas y devuelve las cuatro metas resultantes
-  async updateMacros(id: string, dto: UpdateMacrosDto) {
+  async updateMacros(id: string, dto: UpdateMacrosDto): Promise<MacrosResponseDto> {
     // El DTO puede traer las propiedades como undefined; solo se actualizan las enviadas
     const changes = Object.fromEntries(
       Object.entries(dto).filter(([, value]) => value !== undefined),
